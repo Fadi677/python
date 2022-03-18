@@ -19,7 +19,7 @@ for x in range (1,500000,2):
     sum+=x
 print(sum)
 
-    #another method
+    #another method-
 sum=0
 for x in range (1,500000):
     if x%2==0:
