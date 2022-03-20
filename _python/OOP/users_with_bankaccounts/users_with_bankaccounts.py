@@ -35,23 +35,10 @@ class BankAccount:
             self.balance += 0
         return self
 
-
-
-
-
-mark=User("Mark",111)
+mark=User("Mark",222)
 mark.account.display_account_info()
 mark.display_user_balance()
-# joe=User("joe")
-# joe.account.display_account_info()
-# jane=User("jane")
-# jane.account.display_account_info()
-
-n111=BankAccount(111,1000)
-# n112=BankAccount(112,2000)
-# n113=BankAccount(113,3000)
-
-print("***************************")
-print(type(mark))
-print(type(n111))
-print(type(mark.account))
+joe=User("joe",333)
+joe.account.display_account_info()
+jane=User("jane",444)
+jane.account.display_account_info()
