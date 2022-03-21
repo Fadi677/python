@@ -1,0 +1,185 @@
+rosoft Windows [Version 10.0.19043.1586]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments>python -m venv myvirtual
+
+C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments>dr
+'dr' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 6AD3-7E49
+
+ Directory of C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments
+
+03/21/2022  03:40 PM    <DIR>          .
+03/21/2022  03:40 PM    <DIR>          ..
+03/21/2022  03:40 PM    <DIR>          myvirtual
+               0 File(s)              0 bytes
+               3 Dir(s)  120,955,633,664 bytes free
+
+C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments>cd myvirtual
+
+C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments\myvirtual>cd ..
+
+C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments>cd myvirtual
+
+C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments\myvirtual>dir
+ Volume in drive C has no label.
+ Volume Serial Number is 6AD3-7E49
+
+ Directory of C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments\myvirtual
+
+03/21/2022  03:40 PM    <DIR>          .
+03/21/2022  03:40 PM    <DIR>          ..
+03/21/2022  03:40 PM    <DIR>          Include
+03/21/2022  03:40 PM    <DIR>          Lib
+03/21/2022  03:40 PM               118 pyvenv.cfg
+03/21/2022  03:40 PM    <DIR>          Scripts
+               1 File(s)            118 bytes
+               5 Dir(s)  120,955,023,360 bytes free
+
+C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments\myvirtual>cd Scripts
+
+C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments\myvirtual\Scripts>activate
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments\myvirtual\Scripts>deactivate
+C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments\myvirtual\Scripts>activate
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments\myvirtual\Scripts>cd ..
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments\myvirtual>cd ..
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments>cd ..
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python>mkdir flask
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python>cd flask
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\flask>pip list
+Package    Version
+---------- -------
+pip        22.0.4
+setuptools 58.1.0
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\flask>decativate
+'decativate' is not recognized as an internal or external command,
+operable program or batch file.
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\flask>pip list
+Package    Version
+---------- -------
+pip        22.0.4
+setuptools 58.1.0
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\flask>decavtivate
+'decavtivate' is not recognized as an internal or external command,
+operable program or batch file.
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\flask>decativate
+'decativate' is not recognized as an internal or external command,
+operable program or batch file.
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\flask>deactivate
+C:\Users\Mega\Documents\AXSOS\Assignments\Python\flask>pip list
+Package    Version
+---------- -------
+pip        22.0.4
+setuptools 58.1.0
+
+C:\Users\Mega\Documents\AXSOS\Assignments\Python\flask>cd ..
+
+C:\Users\Mega\Documents\AXSOS\Assignments\Python>cd my_environments
+
+C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments>call myvirtual\Scripts\activate
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments>cd ..
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python>cd flask
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\flask>pip install flask
+Collecting flask
+  Downloading Flask-2.0.3-py3-none-any.whl (95 kB)
+     ---------------------------------------- 95.6/95.6 KB 605.2 kB/s eta 0:00:00
+Collecting Werkzeug>=2.0
+  Downloading Werkzeug-2.0.3-py3-none-any.whl (289 kB)
+     ---------------------------------------- 289.2/289.2 KB 1.6 MB/s eta 0:00:00
+Collecting click>=7.1.2
+  Downloading click-8.0.4-py3-none-any.whl (97 kB)
+     ---------------------------------------- 97.5/97.5 KB 2.8 MB/s eta 0:00:00
+Collecting Jinja2>=3.0
+  Downloading Jinja2-3.0.3-py3-none-any.whl (133 kB)
+     ---------------------------------------- 133.6/133.6 KB 791.0 kB/s eta 0:00:00
+Collecting itsdangerous>=2.0
+  Downloading itsdangerous-2.1.1-py3-none-any.whl (15 kB)
+Collecting colorama
+  Downloading colorama-0.4.4-py2.py3-none-any.whl (16 kB)
+Collecting MarkupSafe>=2.0
+  Downloading MarkupSafe-2.1.1-cp310-cp310-win_amd64.whl (17 kB)
+Installing collected packages: Werkzeug, MarkupSafe, itsdangerous, colorama, Jinja2, click, flask
+Successfully installed Jinja2-3.0.3 MarkupSafe-2.1.1 Werkzeug-2.0.3 click-8.0.4 colorama-0.4.4 flask-2.0.3 itsdangerous-2.1.1
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\flask>pip uninstall flaks
+WARNING: Skipping flaks as it is not installed.
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\flask>pip uninstall flask
+Found existing installation: Flask 2.0.3
+Uninstalling Flask-2.0.3:
+  Would remove:
+    c:\users\mega\documents\axsos\assignments\python\my_environments\myvirtual\lib\site-packages\flask-2.0.3.dist-info\*
+    c:\users\mega\documents\axsos\assignments\python\my_environments\myvirtual\lib\site-packages\flask\*
+    c:\users\mega\documents\axsos\assignments\python\my_environments\myvirtual\scripts\flask.exe
+Proceed (Y/n)? Y
+  Successfully uninstalled Flask-2.0.3
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\flask>cd ..
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python>cd my_environments
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments>pip i Flask
+ERROR: unknown command "i"
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments>pip install Flask
+Collecting Flask
+  Using cached Flask-2.0.3-py3-none-any.whl (95 kB)
+Requirement already satisfied: Jinja2>=3.0 in c:\users\mega\documents\axsos\assignments\python\my_environments\myvirtual\lib\site-packages (from Flask) (3.0.3)
+Requirement already satisfied: Werkzeug>=2.0 in c:\users\mega\documents\axsos\assignments\python\my_environments\myvirtual\lib\site-packages (from Flask) (2.0.3)
+Requirement already satisfied: click>=7.1.2 in c:\users\mega\documents\axsos\assignments\python\my_environments\myvirtual\lib\site-packages (from Flask) (8.0.4)
+Requirement already satisfied: itsdangerous>=2.0 in c:\users\mega\documents\axsos\assignments\python\my_environments\myvirtual\lib\site-packages (from Flask) (2.1.1)
+Requirement already satisfied: colorama in c:\users\mega\documents\axsos\assignments\python\my_environments\myvirtual\lib\site-packages (from click>=7.1.2->Flask) (0.4.4)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\mega\documents\axsos\assignments\python\my_environments\myvirtual\lib\site-packages (from Jinja2>=3.0->Flask) (2.1.1)
+Installing collected packages: Flask
+Successfully installed Flask-2.0.3
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments>pip lisy
+ERROR: unknown command "lisy" - maybe you meant "list"
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments>pip list
+Package      Version
+------------ -------
+click        8.0.4
+colorama     0.4.4
+Flask        2.0.3
+itsdangerous 2.1.1
+Jinja2       3.0.3
+MarkupSafe   2.1.1
+pip          22.0.4
+setuptools   58.1.0
+Werkzeug     2.0.3
+
+(myvirtual) C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments>deactivate
+C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments>pip list
+Package    Version
+---------- -------
+pip        22.0.4
+setuptools 58.1.0
+
+C:\Users\Mega\Documents\AXSOS\Assignments\Python\my_environments>
+
+
+
+
+
+
+
