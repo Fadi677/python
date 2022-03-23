@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checker Board</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    {% for y in range(0,times2) %}
+    <div class="row">  
+        {% for x in range(0,times) %}
+            {% if (x+y)%2==0 %}
+                
+                    <div class="dark"></div>  
+                
+            {% elif (x+y)%2==1 %}
+                
+                    <div class="light"></div>
+                
+            {% endif %}
+        {% endfor %}
+    </div>
+    {% endfor %}
+</body>
+</html>
