@@ -1,0 +1,13 @@
+form{
+    width: 600px;
+    
+    background-color: blueviolet;
+    font-size: 26px;
+    padding: 12px;
+    margin: 20px auto;
+    color: white;
+}
+form input{
+    color: white;
+    background-color: grey;
+}

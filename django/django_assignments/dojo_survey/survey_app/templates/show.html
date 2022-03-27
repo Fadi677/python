@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Page</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/surveystyle.css' %}"> 
+</head>
+<body>
+    <form action="/">
+        {% csrf_token %}
+    <h1>Submitted Info</h1>
+    <p>Name: {{name}}</p>
+    <p>Dojo: {{location}}</p>
+    <p>Favorite Language: {{language}}</p>
+    <p>Comment: {{comment}}</p>
+    <input type="submit" value="Go Back">
+</form>
+</body>
+</html>
