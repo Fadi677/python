@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/counterstyle.css' %}">    
+    <script src="{% static 'js/script.js' %}"></script>
+    <title>Count Me</title>
+</head>
+<body>
+    <h1>Counter:</h1>
+    <p>Time(s): {{request.session.counter}}</p>
+    <form action="destroy_session" method="post">
+        {% csrf_token %}
+        <input type="submit" value="RESET">
+    </form>
+    <form action="plus2" method="post">
+        {% csrf_token %}
+        <input type="submit" value="+2">
+    </form>
+    <form action="useradd" method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Add Number to The Counter" name="numbertoadd">
+        <input type="submit" value="Submit Addition">
+    </form>
+</body>
+</html>

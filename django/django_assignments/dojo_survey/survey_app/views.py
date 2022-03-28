@@ -5,13 +5,13 @@ def index(request):
 
 
 def showresult(request):
-    name=request.POST['name']
+    # name=request.POST['name']
     location=request.POST['location']
     language=request.POST['language']
     comment=request.POST['comment']
 
     context={
-        'name':name,
+        'name':request.POST['name'],
         'location':location,
         'language':language,
         'comment':comment
