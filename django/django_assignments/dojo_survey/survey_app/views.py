@@ -12,8 +12,8 @@ def showresult(request):
 
     context={
         'name':request.POST['name'],
-        'location':location,
-        'language':language,
-        'comment':comment
+        'location':request.POST['location'],
+        'language':request.POST['language'],
+        'comment':request.POST['comment']
     }
     return render(request,'show.html',context)
