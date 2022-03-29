@@ -5,7 +5,7 @@ def index(request):
 
 
 def showresult(request):
-    # name=request.POST['name']
+    name=request.POST['name']
     location=request.POST['location']
     language=request.POST['language']
     comment=request.POST['comment']
