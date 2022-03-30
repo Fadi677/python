@@ -41,5 +41,11 @@
         <input type="submit">
         </form>
     </div>
+    <h2>Activities</h2>
+    <p>{{money_info}}</p>
+    <form action="reset">
+        {% csrf_token %}
+    <input type="submit" value="Play Again">
+    </form>
 </body>
 </html>
