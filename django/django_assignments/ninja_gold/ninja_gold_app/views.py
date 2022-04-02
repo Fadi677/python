@@ -1,5 +1,3 @@
-from multiprocessing import context
-from this import d
 from django.shortcuts import render, redirect
 import random
 
@@ -13,7 +11,6 @@ def index(request):
 
 def play(request):
     if request.POST['form_name'] == 'farm':
-        # count=0
         if 'summation' in request.session:
             randomnum=random.randint(10, 20)
             request.session['summation']+=randomnum
@@ -22,12 +19,11 @@ def play(request):
             print("_______",request.session['summation'])
             randomnum=random.randint(10, 20)
             request.session['summation']+=randomnum
-            # count+=1
         context={
             'summation' : request.session['summation'],
-            'money_info' : "Earned {} Golds from the Farm!".format(randomnum),
-            # 'counter' : request.session['count']
+            'money_info' : "Earned {} Golds from the Farm!".format(randomnum)
         }
+        print("------",context.keys,context.values)
         return render(request,'index.html',context)
     
     elif request.POST['form_name'] == 'cave':
@@ -79,6 +75,11 @@ def play(request):
             context={
                 'summation' : request.session['summation'],
                 'money_info' : "Entered a Casino and Lost {} Golds!".format(x)
+                }
+        else:
+            context={
+                'summation' : request.session['summation'],
+                'money_info' : "Entered a Casino and didn't win or lose any Golds!"
                 }
         return render(request,'index.html',context)
 

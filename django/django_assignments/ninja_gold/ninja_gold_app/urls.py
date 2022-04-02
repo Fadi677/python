@@ -3,6 +3,6 @@ from . import views
 
 urlpatterns = [
     path('', views.index),
-    path('find',views.play),
+    path('process_money',views.play),
     path('reset',views.restartgame)
 ]

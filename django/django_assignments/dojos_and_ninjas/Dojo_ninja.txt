@@ -1,0 +1,47 @@
+1. Create 3 dojos
+    dojo_1=Dojo.objects.create(name='firstdojo', city='huoston', state='texas')
+    dojo_2=Dojo.objects.create(name='seconddojo', city='boston', state='new york')
+    dojo_3=Dojo.objects.create(name='thirddojo', city='los angeles' ,state='california')
+2. Delete the three dojos you created
+    >>> alldojos=Dojo.objects.all()
+    >>> alldojos.delete()
+
+3. Create 3 additional dojos by using Dojo.objects.create
+    >>> dojo_4=Dojo.objects.create(name='fourthdojo', city='new york', state='new york')
+    >>> dojo_5=Dojo.objects.create(name='fifthdojo', city='miami', state='florida')
+    >>> dojo_6=Dojo.objects.create(name='sixthdojo', city='las vegas', state='nivada')
+
+4. Create 3 ninjas that belong to the first dojo you created.
+    >>> ninja1=Ninja.objects.create(first_name='michael', last_name='jordan', dojo=Dojo.objects.get(name='fourthdojo'))
+    >>> ninja4=Ninja.objects.create(first_name='allen', last_name='iverson', dojo=Dojo.objects.get(name='fourthdojo'))
+    >>> ninja5=Ninja.objects.create(first_name='lebron', last_name='james', dojo=Dojo.objects.get(name='fourthdojo'))
+
+5. Create 3 more ninjas and have them belong to the second dojo you created.
+    >>> ninja2=Ninja.objects.create(first_name='kobe', last_name='bruant', dojo=Dojo.objects.get(name='fifthdojo'))
+    >>> ninja6=Ninja.objects.create(first_name='shaquile', last_name='oneal', dojo=Dojo.objects.get(name='fifthdojo'))
+    >>> ninja9=Ninja.objects.create(first_name='carmelo', last_name='anthony', dojo=Dojo.objects.get(name='fifthdojo'))
+   
+6. Create 3 more ninjas and have them belong to the third dojo you created.
+    >>> ninja3=Ninja.objects.create(first_name='vince', last_name='carter', dojo=Dojo.objects.get(name='sixthdojo'))
+    >>> ninja7=Ninja.objects.create(first_name='tim', last_name='duncan', dojo=Dojo.objects.get(name='sixthdojo'))
+    >>> ninja8=Ninja.objects.create(first_name='tracey', last_name='mcgrady', dojo=Dojo.objects.get(name='sixthdojo'))
+    
+7. Retrieve all ninjas that belong to the first Dojo.
+    >>> Ninja.objects.filter(dojo=Dojo.objects.get(name='fourthdojo')).values
+
+8. Retrieve all the ninjas from the last dojo
+    >>> Ninja.objects.filter(dojo=Dojo.objects.get(name='sixthdojo')).values
+9. Retrieve all ninjas that belong to the last Dojo.
+    >>> Ninja.objects.last()
+
+
+(djangoPy3Env) D:\Desktop\Axsos\Python_stack\django\django_fundamentals\Dojo_ninja>python manage.py migrate
+Operations to perform:
+  Apply all migrations: admin, auth, contenttypes, main, sessions
+Running migrations:
+  Applying main.0002_rename_ninjas_ninja_dojo_desc... OK
+
+10. from main.models import Dojo, Ninja
+    new_dojo = Dojo.objects.create(name='codingdojo', state='US', city='Miami')
+    print(new_dojo.desc)
+    old dojo
