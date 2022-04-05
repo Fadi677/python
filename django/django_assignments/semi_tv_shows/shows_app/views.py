@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect, HttpResponse
 from django.contrib import messages
 from shows_app import models
+from .models import Show
 
 def root(request):
     return redirect('/shows')
@@ -14,14 +15,14 @@ def index(request):
 def new_show(request):
     return render (request,'add_show.html')
 
-def add_show(request,postData):
-    errors=models.ShowManager.basic_validator(postData)
+def add_show(request):
+    errors=Show.objects.basic_validator(request.POST)
     if len(errors)>0:
         for key, value in errors.items():
             messages.error(request, value)
-        return redirect('/shows')
+        return redirect('/shows/new')
     else:
-        this_show = models.create_show(postData)
+        this_show = models.create_show(request.POST)
         print("^^^^",this_show)
         return redirect('/shows/'+str(this_show.id))
 
@@ -39,9 +40,15 @@ def edit_show(request,showid):
 
 def update_show(request):
     my_show_id=request.POST['show_id']
-    show_to_update=models.update_me(request.POST,my_show_id)
-    print("-------",show_to_update)
-    return redirect('/shows/'+str(my_show_id))
+    errors=Show.objects.basic_validator(request.POST)
+    if len(errors)>0:
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect('/shows/'+str(my_show_id)+'/edit')
+    else:
+        show_to_update=models.update_me(request.POST,my_show_id)
+        print("-------",show_to_update)
+        return redirect('/shows/'+str(my_show_id))
 
 def delete_show(request, showid):
     show_to_delete=models.delete_this(showid)

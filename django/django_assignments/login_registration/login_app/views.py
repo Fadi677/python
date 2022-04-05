@@ -44,5 +44,4 @@ def check(request):
 def delete_session(request):
     request.session['email']=[]
     request.session['name']=[]
-    print("-------",request.session['email'],request.session['name'])
     return redirect('/')
