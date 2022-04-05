@@ -1,4 +1,5 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, HttpResponse
+from django.contrib import messages
 from shows_app import models
 
 def root(request):
@@ -13,10 +14,16 @@ def index(request):
 def new_show(request):
     return render (request,'add_show.html')
 
-def add_show(request):
-    this_show = models.create_show(request.POST)
-    print("^^^^",this_show)
-    return redirect('/shows/'+str(this_show.id))
+def add_show(request,postData):
+    errors=models.ShowManager.basic_validator(postData)
+    if len(errors)>0:
+        for key, value in errors.items():
+            messages.error(request, value)
+        return redirect('/shows')
+    else:
+        this_show = models.create_show(postData)
+        print("^^^^",this_show)
+        return redirect('/shows/'+str(this_show.id))
 
 def my_show(request,showid):
     context={
