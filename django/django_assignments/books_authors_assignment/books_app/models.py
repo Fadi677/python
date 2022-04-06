@@ -2,15 +2,16 @@ from django.db import models
 
 class Book(models.Model):
     title = models.CharField(max_length=255)
-    desc = models.TextField(default="")
+    desc = models.TextField(default="this book discription")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    #authors = list of authors
 
 class Author(models.Model):
     first_name=models.CharField(max_length=45)
     last_name=models.CharField(max_length=45)
     books = models.ManyToManyField(Book, related_name="authors")
-    notes=models.TextField(default="")
+    notes=models.TextField(default="notes about this author")
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -37,7 +38,15 @@ def select_author(bookid,authorid):
 def getauthor(authorid):
     return Author.objects.get(id=authorid)
 
-def select_book(bookid,authorid):
+def select_book(authorid,bookid):
     this_book=Book.objects.get(id=bookid)
     this_author=Author.objects.get(id=authorid)
-    this_author.books.add(this_author)
+    this_author.books.add(this_book)
+
+def except_book(authorid):
+    selected_author = Author.objects.get(id=authorid) 
+    return Book.objects.exclude(id__in=selected_author.books.all())
+
+def except_author(bookid):
+    selected_book=Book.objects.get(id=bookid)
+    return Author.objects.exclude(id__in=selected_book.authors.all())

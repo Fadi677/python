@@ -28,15 +28,31 @@ def reshowbook(request,bookid):
 def showbook(request,bookid):
     context={
         'this_book' : models.getbook(bookid),
+        'all_authors': models.all_authors(),
+        'all_authors_except': models.except_author(bookid)
     }
     return render(request,'mybook.html',context)
 
 def reshowauthor(request,authorid):
     models.getauthor(authorid)
-    return redirect('authors/<int:bookid>')
+    return redirect('authors/<int:authorid>')
 
 def showauthor(request,authorid):
     context={
         'this_author' : models.getauthor(authorid),
+        'all_books': models.all_books(),
+        'all_books_except': models.except_book(authorid)
     }
     return render(request,'myauthor.html',context)
+
+def add_author_book(request):
+    book=request.POST['booksid']
+    author=request.POST['authors']
+    models.select_author(book,author)
+    return redirect('books/'+str(book))
+
+def add_book_author(request):
+    book=request.POST['books']
+    author=request.POST['authorsid']
+    models.select_book(author,book)
+    return redirect('authors/'+str(author))

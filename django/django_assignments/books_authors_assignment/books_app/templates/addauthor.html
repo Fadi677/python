@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Books And Authors</title>
+    <title>Authors</title>
 </head>
 <body>
-    <h1>Books</h1>
+    <h1>Authors</h1>
+    <div>
     <table>
         <thead>
             <tr>
@@ -21,21 +22,22 @@
         <tr>
             <td>{{author.id}}</th>
             <td>{{author.first_name}} {{author.last_name}}</td>
-            <td>View</td>
+            <td><a href="authors/{{author.id}}">View</a></td>
         </tr>
-        {%endfor%}
+            {%endfor%}
         </tbody>
-        <h1>Add an Author</h1>
-        <form action="addauthor" method="POST">
-        {% csrf_token %}
-            <label for="firstname"> First Name: </label>
-            <input type="text" name="firstname">
-            <label for="lastname"> Last Name: </label>
-            <input type="text" name="lastname">
-            <label for="notes"> Notes: </label>
-            <input type="text" name="notes">
-            <input type="submit" value="Add">
-        </form>
     </table>
+    <h1>Add an Author</h1>
+    <form action="addauthor" method="POST">
+    {% csrf_token %}
+        <label for="firstname"> First Name: </label>
+        <input type="text" name="firstname">
+        <label for="lastname"> Last Name: </label>
+        <input type="text" name="lastname">
+        <label for="notes"> Notes: </label>
+        <input type="text" name="notes">
+        <input type="submit" value="Add">
+    </form>
+    
 </body>
 </html>

@@ -4,25 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Books And Authors</title>
+    <title>This Author</title>
 </head>
 <body>
-    <h1>{{this_book.title}}</h1>
-    <h2>ID: {{this_book.id}}</h2>
-    <h2>Description:</h2>
-    <p>{{this_book.desc}}</p>
-    <ul>Authors:
-    {% for i in this_book.authors %}    
-        <li>{{i.first_name}} {{i.last_name}}</li>
+    <h1>{{this_author.first_name}} {{this_author.last_name}}</h1>
+    <h2>ID: {{this_author.id}}</h2>
+    <h2>Notes:</h2>
+    <p>{{this_author.notes}}</p>
+    <ul>Books:
+    {% for i in this_author.books.all %}    
+        <li>{{i.title}}</li>
     {% endfor %}
     </ul>
-    <form action="/addtobook" method="POST">
+    <form action="/addtoauthor" method="POST">
+        <input type="hidden" name="authorsid" value="{{this_author.id}}">
     {% csrf_token %}
-        <select>
-            {% for author in list_of_authors %}
-            <option value="{{author.id}}">{{author.id}}</option>
+        <select name="books">
+            {% for book in all_books_except %}
+            <option value="{{book.id}}">{{book.title}}</option>
             {% endfor %}
         </select>
+        <input type="submit" value="Add Book">
     </form>
+    <a href="/authors">Go To Authors</a>
 </body>
 </html>
