@@ -22,11 +22,13 @@ def registeration(request):
 
 
 def success(request):
-    
-    context={
-        'user_info' : models.get_user(request.session['id'])
-    }
-    return render(request,'success.html',context)
+    if 'id' in request.session:
+        context={
+            'user_info' : models.get_user(request.session['id'])
+        }
+        return render(request,'success.html',context)
+    else:
+        return redirect('/')
 
 def check(request):
     errors = User.objects.login_validator(request.POST)
