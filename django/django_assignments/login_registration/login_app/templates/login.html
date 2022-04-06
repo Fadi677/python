@@ -23,17 +23,10 @@
         <input type="password" name="confirm">
         <input type="submit" value="Register">
     </form>
-    {% if messages %}
-    <ul class="messages">    
-        {% for message in messages %}    
-        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
-        {% endfor %}
-    </ul>
-    {% endif %}
     <h1>Log In</h1>
     <form action="/check_log" method="post">
         {% csrf_token %}
-        <input type="hidden" name="which_form" value="login">
+        <input type="hidden" name="loginid" value="id">
         <label for="email">Email:</label>
         <input type="text" name="email">
         <label for="password">Password:</label>

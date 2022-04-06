@@ -16,16 +16,24 @@ class UserManager(models.Manager):
             errors['email'] = "Invalid email address!"
         if len(postData['password']) <8:
             errors["password"]="User password should be at least 8 characters"
+        if postData['password']!=postData['confirm']:
+            errors["confirm"]="Password and confirmation Password don't match"
         return errors
     
     def login_validator(self,postData):
-        errors1 = {}
+        check_e=User.objects.filter(email=postData['email'])
+        errors = {}
+        if not len(check_e):
+            errors['email']="email doesn't exist"
         EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
         if not EMAIL_REGEX.match(postData['email']):
-            errors1['email'] = "Invalid email address!"
+            errors['email'] = "Invalid email address!"
         if len(postData['password']) <8:
-            errors1["password"]="User password should be at least 8 characters"
-        return errors1
+            errors["password"]="User password should be at least 8 characters"
+        if len(check_e) and not bcrypt.checkpw(postData['password'].encode(),check_e[0].password.encode()):
+            errors["password"]="Wrong Password!"
+        return errors
+
 
 class User(models.Model):
     first_name=models.CharField(max_length=45)
