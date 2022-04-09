@@ -9,6 +9,9 @@
 <body>
     <h1>Success! Welcome, {{request.session.name}}!</h1>
     <h2>Succsessfully Registered (or logged in)!</h2>
-    <a href="log_out">Log Out</a>
+    <form action="log_out" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Log Out">
+    </form>
 </body>
 </html>

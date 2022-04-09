@@ -1,4 +1,3 @@
-from ast import Add
 from django.db import models
 import re
 import bcrypt
@@ -50,8 +49,13 @@ def create_u(data):
     return User.objects.create(first_name=data['first_name'],last_name=data['last_name'],email=data['email'],password=hashed_pass)
 
 def get_user(user_id):
-    return User.objects.get(id=user_id)
+    this_user=User.objects.get(id=user_id)
+    return this_user
 
 def log_in_u(uemail):
     user0=User.objects.filter(email=uemail)
     return user0[0]
+
+def get_all_users():
+    all_users=User.objects.all()
+    return all_users
