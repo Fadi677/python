@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Favorite Books</title>
+</head>
+<body>
+    <div style="display: flex; justify-content: space-around; align-items: center;" >
+    <h1>Welcome {{request.session.first_name}}</h1>
+    <form action="/log_out" method="post">
+        {% csrf_token %}
+            <input type="submit" value="Log Out">
+    </form>
+    </div>
+    <form action="add" method="post">
+        {% csrf_token %}
+        <h2>Add a Favorite Book</h2>
+        <label for="title">Title:</label>
+        <input type="text" name="title" placeholder="Book Title">
+        <label for="desc">Description:</label>
+        <textarea name="desc" aria-colspan="40" aria-rowcount="3" placeholder="Book Description"></textarea>
+        <input type="submit" value="Add">
+    </form>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <hr>
+    {% for book in all_books %}
+        <input type="hidden" name="book_id" value="{{book.id}}">
+        <div><a href="#">{{book.title}}</a></div>
+        <div><p>Added By: {{book.uploaded_by.first_name}} {{book.uploaded_by.last_name}}</p></div>
+        {% if book.uploaded_by.id != requst.session.id %}
+            <div><a href="add_fav">Add to Favorites</a></div>
+        {% endif %}
+    {% endfor %}
+</body>
+</html>
